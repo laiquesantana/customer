@@ -67,16 +67,19 @@ class User extends ActiveRecord implements IdentityInterface
         return static::findOne($id);
     }
 
-    public static function findIdentityByAccessToken($token, $type = null): User | IdentityInterface | null
+    public static function findIdentityByAccessToken($token, $type = null): ?IdentityInterface
     {
         try {
             $secretKey = Yii::$app->params['jwtSecret'];
+
             $decoded = JWT::decode($token, new Key($secretKey, 'HS256'));
-            return static::findOne($decoded['uid']);
+            return static::findOne($decoded->uid);
         } catch (\Exception $e) {
             return null;
         }
     }
+
+
     public function getId()
     {
         return $this->id;
