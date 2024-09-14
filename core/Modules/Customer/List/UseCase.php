@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core\Modules\Customer\List;
+namespace core\Modules\Customer\List;
 
 
-use app\core\Modules\Customer\Create\Gateways\CustomerGateway;
-use app\core\Modules\Generics\Entities\Status;
-use app\core\Presenters\JsonResponsePresenter;
-use app\core\Responses\Response;
-use app\core\Responses\ResponseInterface;
+use core\Modules\Customer\Create\Gateways\CustomerGateway;
+use core\Modules\Generics\Entities\Status;
+use core\Presenters\JsonResponsePresenter;
+use core\Responses\Response;
+use core\Responses\ResponseInterface;
 
 class UseCase
 {

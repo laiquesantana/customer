@@ -1,5 +1,5 @@
 <?php
-namespace app\core\Modules\Customer\Create\Gateways;
+namespace core\Modules\Customer\Create\Gateways;
 
 interface CepGateway
 {

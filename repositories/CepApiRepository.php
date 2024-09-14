@@ -1,8 +1,8 @@
 <?php
 namespace app\repositories;
 
-use app\core\Dependencies\Http\HttpClientInterface;
-use app\core\Modules\Customer\Create\Gateways\CepGateway;
+use core\Dependencies\Http\HttpClientInterface;
+use core\Modules\Customer\Create\Gateways\CepGateway;
 
 class CepApiRepository implements CepGateway
 {

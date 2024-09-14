@@ -1,9 +1,9 @@
 <?php
 namespace app\repositories;
 
-use app\core\Modules\Customer\Create\Entities\CustomerEntity;
-use app\core\Modules\Customer\Create\Gateways\CustomerGateway;
-use app\core\Modules\Customer\List\Gateways\ListCustomerGateway;
+use core\Modules\Customer\Create\Entities\CustomerEntity;
+use core\Modules\Customer\Create\Gateways\CustomerGateway;
+use core\Modules\Customer\List\Gateways\ListCustomerGateway;
 use app\models\Customer;
 
 class CustomerRepository implements CustomerGateway, ListCustomerGateway

@@ -1,5 +1,5 @@
 <?php
-namespace app\core\Modules\Customer\Create\Entities;
+namespace core\Modules\Customer\Create\Entities;
 class CustomerEntity
 {
     public int $id;

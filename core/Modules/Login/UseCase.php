@@ -1,13 +1,13 @@
 <?php
 
-namespace app\core\Modules\Login;
+namespace core\Modules\Login;
 
 use app\Core\Modules\Login\Gateways\AuthGateway;
 use Firebase\JWT\JWT;
-use app\core\Modules\Generics\Entities\Status;
-use app\core\Responses\Response;
-use app\core\Responses\ResponseInterface;
-use app\core\Presenters\JsonResponsePresenter;
+use core\Modules\Generics\Entities\Status;
+use core\Responses\Response;
+use core\Responses\ResponseInterface;
+use core\Presenters\JsonResponsePresenter;
 use app\Adapters\ConfigAdapter;
 
 class UseCase

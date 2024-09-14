@@ -7,7 +7,7 @@ use Yii;
 use yii\rest\Controller;
 use yii\web\BadRequestHttpException;
 use yii\web\UnauthorizedHttpException;
-use app\core\Modules\Login\UseCase;
+use core\Modules\Login\UseCase;
 use app\repositories\AuthRepository;
 
 class LoginController extends Controller

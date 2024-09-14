@@ -1,12 +1,11 @@
 <?php
+
 return [
-    // Rotas de autenticação
     'POST /login' => 'login/index',
-
-    // Rotas de Customer
-    'POST /customer' => 'customer/create',     // Criação de cliente
-    'GET /customer' => 'customer/list',       // Listagem de clientes
-
-    // Documentação Swagger
+    'POST /book' => 'book/create',
+    'GET /book' => 'book/list',
+    'POST /customer' => 'customer/create',
+    'GET /customer' => 'customer/list',
     'GET /swagger' => 'swagger/json',
+
 ];

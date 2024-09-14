@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core\Modules\Customer\List\Gateways;
+namespace core\Modules\Customer\List\Gateways;
 
 interface ListCustomerGateway
 {

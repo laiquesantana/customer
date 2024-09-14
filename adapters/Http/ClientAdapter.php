@@ -51,6 +51,9 @@ class ClientAdapter implements HttpClientInterface
         }
     }
 
+    /**
+     * @throws RequestFailureException
+     */
     public function get(string $endpoint, array $headers = [], bool $httpError = true): string
     {
         try {

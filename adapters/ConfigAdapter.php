@@ -22,6 +22,11 @@ class ConfigAdapter extends BaseObject
         return $this->getConfig('JWT_AUDIENCE');
     }
 
+    public function getBrasilApiBaseUrl(): string
+    {
+        return $this->getConfig('BRASILAPI_BASE_URL') ?? 'https://brasilapi.com.br';
+    }
+
     public function getJwtExpiry(): int
     {
         return (int)$this->getConfig('JWT_EXPIRY', 3600);

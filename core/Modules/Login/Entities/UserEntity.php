@@ -1,5 +1,5 @@
 <?php
-namespace app\core\Modules\Login\Entities;
+namespace core\Modules\Login\Entities;
 
 class UserEntity
 {

@@ -1,7 +1,7 @@
 <?php
-namespace app\core\Modules\Customer\Create\Rules;
+namespace core\Modules\Customer\Create\Rules;
 
-use app\core\Modules\Customer\Create\Gateways\CepGateway;
+use core\Modules\Customer\Create\Gateways\CepGateway;
 
 class FetchCepDataRule
 {

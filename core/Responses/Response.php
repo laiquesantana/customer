@@ -1,8 +1,8 @@
 <?php
-namespace app\core\Responses;
+namespace core\Responses;
 
-use app\core\Modules\Generics\Entities\Status;
-use app\core\Presenters\PresenterInterface;
+use core\Modules\Generics\Entities\Status;
+use core\Presenters\PresenterInterface;
 
 class Response implements ResponseInterface
 {

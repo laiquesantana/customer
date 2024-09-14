@@ -1,14 +1,14 @@
 <?php
 
-namespace app\core\Modules\Customer\Create;
+namespace core\Modules\Customer\Create;
 
-use app\core\Modules\Customer\Create\Entities\CustomerEntity;
-use app\core\Modules\Customer\Create\Gateways\CepGateway;
-use app\core\Modules\Customer\Create\Gateways\CustomerGateway;
-use app\core\Responses\Response;
-use app\core\Responses\ResponseInterface;
-use app\core\Presenters\JsonResponsePresenter;
-use app\core\Modules\Generics\Entities\Status;
+use core\Modules\Customer\Create\Entities\CustomerEntity;
+use core\Modules\Customer\Create\Gateways\CepGateway;
+use core\Modules\Customer\Create\Gateways\CustomerGateway;
+use core\Responses\Response;
+use core\Responses\ResponseInterface;
+use core\Presenters\JsonResponsePresenter;
+use core\Modules\Generics\Entities\Status;
 class UseCase
 {
     private CustomerGateway $customerGateway;

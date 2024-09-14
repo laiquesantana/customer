@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core\Modules\Generics\Entities;
+namespace core\Modules\Generics\Entities;
 
 class Status
 {

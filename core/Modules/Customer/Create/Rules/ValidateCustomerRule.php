@@ -1,5 +1,5 @@
 <?php
-namespace app\core\Modules\Customer\Create\Rules;
+namespace core\Modules\Customer\Create\Rules;
 
 
 class ValidateCustomerRule

@@ -1,30 +1,26 @@
 <?php
-
 namespace core\Dependencies\Http\Exceptions;
 
-use Exception;
 use Throwable;
 
-class RequestFailureException extends Exception
+class RequestFailureException extends \Exception
 {
-    private string $endpoint;
+    protected string $endpoint;
 
-    public function __construct(
-        string $message,
-        Throwable $previous = null,
-        int $code = 0
-    ) {
+    public function __construct($message = "", Throwable $previous = null, $code = 0, string $endpoint = '')
+    {
+        $this->endpoint = $endpoint;
         parent::__construct($message, $code, $previous);
+    }
+
+    public function setEndpoint(string $endpoint): self
+    {
+        $this->endpoint = $endpoint;
+        return $this;
     }
 
     public function getEndpoint(): string
     {
         return $this->endpoint;
-    }
-
-    public function setEndpoint(string $endpoint): RequestFailureException
-    {
-        $this->endpoint = $endpoint;
-        return $this;
     }
 }

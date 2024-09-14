@@ -8,8 +8,8 @@ use app\repositories\CepApiRepository;
 use app\repositories\CustomerRepository;
 use Yii;
 use yii\rest\Controller;
-use app\core\Modules\Customer\List\UseCase as ListUseCase;
-use app\core\Modules\Customer\Create\UseCase as CreateUseCase;
+use core\Modules\Customer\List\UseCase as ListUseCase;
+use core\Modules\Customer\Create\UseCase as CreateUseCase;
 use app\models\Customer;
 
 class CustomerController extends Controller
@@ -76,7 +76,35 @@ class CustomerController extends Controller
 
         return $useCase->getResponse()->present();
     }
-
+    /**
+     * @OA\Get(
+     *     path="/customer",
+     *     summary="Listagem de clientes",
+     *     @OA\Parameter(
+     *         name="name",
+     *         in="query",
+     *         description="Nome do cliente para filtro",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Parameter(
+     *         name="cpf",
+     *         in="query",
+     *         description="CPF do cliente para filtro",
+     *         required=false,
+     *         @OA\Schema(type="string")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Clientes listados com sucesso",
+     *         @OA\JsonContent(
+     *             @OA\Property(property="data", type="array", @OA\Items(ref="#/components/schemas/Customer"))
+     *         )
+     *     ),
+     *     @OA\Response(response=500, description="Erro ao buscar clientes"),
+     *     security={{"bearerAuth": {}}}
+     * )
+     */
     public function actionList(): array
     {
         $params = Yii::$app->request->get();

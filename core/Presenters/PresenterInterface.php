@@ -1,7 +1,7 @@
 <?php
-namespace app\core\Presenters;
+namespace core\Presenters;
 
-use app\core\Responses\Response;
+use core\Responses\Response;
 
 interface PresenterInterface
 {

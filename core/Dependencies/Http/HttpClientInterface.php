@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core\Dependencies\Http;
+namespace core\Dependencies\Http;
 
 
 use core\Dependencies\Http\Entities\HttpResponse;
