@@ -20,7 +20,6 @@ class m240914_183641_create_customer_table extends Migration
             'created_at' => $this->timestamp()->defaultExpression('CURRENT_TIMESTAMP'),
         ]);
 
-        // Add indexes
         $this->createIndex('idx_customer_cpf', '{{%customer}}', 'cpf');
         $this->createIndex('idx_customer_city', '{{%customer}}', 'city');
     }
