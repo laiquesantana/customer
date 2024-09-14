@@ -1,6 +1,5 @@
 # docker-compose.yaml
 version: '3.8'
-
 services:
   app:
     build:
@@ -19,6 +18,10 @@ services:
       - JWT_SECRET_KEY=${JWT_SECRET_KEY}
       - JWT_ISSUER=${JWT_ISSUER}
       - JWT_AUDIENCE=${JWT_AUDIENCE}
+      - DB_HOST=${DB_HOST}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
     networks:
       - app-network
     depends_on:
@@ -45,6 +48,7 @@ services:
     container_name: my-api-mysql
     restart: unless-stopped
     environment:
+      DB_HOST: mysql
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
