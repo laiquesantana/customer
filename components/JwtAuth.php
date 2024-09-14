@@ -12,17 +12,23 @@ class JwtAuth extends AuthMethod
     public function authenticate($user, $request, $response): ?\yii\web\IdentityInterface
     {
         $authHeader = $request->getHeaders()->get('Authorization');
+
         if ($authHeader !== null && preg_match('/^Bearer\s+(.*?)$/', $authHeader, $matches)) {
             $token = $matches[1];
+
             try {
                 $identity = $user->loginByAccessToken($token, get_class($this));
+
                 if ($identity !== null) {
                     return $identity;
+                } else {
+                    throw new UnauthorizedHttpException('Invalid token or user not found.');
                 }
             } catch (\Exception $e) {
                 throw new UnauthorizedHttpException('Your request was made with invalid credentials.');
             }
         }
-        return null;
+
+        return null;  // Retorna null se não houver token válido
     }
 }
