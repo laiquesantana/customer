@@ -2,7 +2,6 @@
 
 namespace core\Dependencies\Http;
 
-
 use core\Dependencies\Http\Entities\HttpResponse;
 
 interface HttpClientInterface

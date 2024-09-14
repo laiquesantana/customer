@@ -2,7 +2,7 @@
 
 namespace app\adapters\Http;
 
-use app\core\Dependencies\Http\HttpClientInterface;
+use core\Dependencies\Http\HttpClientInterface;
 use core\Dependencies\Http\Collections\HeaderCollection;
 use core\Dependencies\Http\Entities\HttpResponse;
 use core\Dependencies\Http\Exceptions\RequestFailureException;
