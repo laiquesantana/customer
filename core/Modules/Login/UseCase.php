@@ -2,7 +2,7 @@
 
 namespace core\Modules\Login;
 
-use app\Core\Modules\Login\Gateways\AuthGateway;
+use core\Modules\Login\Gateways\AuthGateway;
 use Firebase\JWT\JWT;
 use core\Modules\Generics\Entities\Status;
 use core\Responses\Response;

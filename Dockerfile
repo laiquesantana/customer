@@ -1,10 +1,10 @@
-# Dockerfile
+# Use a imagem base PHP 8.3 com FPM
 FROM php:8.3-fpm
 
-# Set working directory
+# Definir o diretório de trabalho
 WORKDIR /var/www/html
 
-# Install system dependencies
+# Instalar dependências do sistema
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -16,26 +16,26 @@ RUN apt-get update && apt-get install -y \
     libzip-dev \
     libpq-dev
 
-RUN docker-php-ext-install gd
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd zip
+# Instalar extensões do PHP
+RUN docker-php-ext-install gd pdo_mysql mbstring exif pcntl bcmath zip
 
-# Install Redis extension
+# Instalar a extensão Redis via PECL
 RUN pecl install redis && docker-php-ext-enable redis
 
-# Install Composer
+# Instalar o Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copy existing application directory contents
+# Copiar os arquivos do projeto
 COPY . /var/www/html
 
-# Change current user to www-data
-RUN chown -R www-data:www-data /var/www/html
-# Change current user to www-data
+# Instalar dependências do Composer
+RUN composer install --no-dev --prefer-dist --optimize-autoloader
+
+# Definir permissões corretas
 RUN chown -R www-data:www-data /var/www/html
 
-# Expose port (configured via docker-compose)
+# Expor a porta (configurada via docker-compose)
 EXPOSE 9000
 
-# Start php-fpm server
+# Iniciar o servidor PHP-FPM
 CMD ["php-fpm"]

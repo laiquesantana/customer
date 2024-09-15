@@ -24,3 +24,5 @@ bash:
 
 migrate:
 	docker exec -it my-api-app php yii migrate --interactive=0
+update:
+	docker exec -it my-api-app composer update
