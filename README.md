@@ -80,10 +80,12 @@ docker exec -it my-api-app php yii migrate --interactive=0
 ```
 ## 3.4 Criando usuario da api
 
-#### opção 1:
+#### Opção 1:
 ```bash
 make create-user USER_NAME=username PASSWORD=1234567 FULL_NAME='full name'
 ```
+
+#### Opção 2:
 Entre dentro do container docker usando :
 ```bash
 make bash docker exec -it my-api-app /bin/bash
