@@ -27,6 +27,21 @@ class ConfigAdapter extends BaseObject
         return $this->getConfig('BRASILAPI_BASE_URL') ?? 'https://brasilapi.com.br';
     }
 
+    public function getAwsCredentials(): string
+    {
+        return $this->getConfig('BRASILAPI_BASE_URL') ?? 'https://brasilapi.com.br';
+    }
+
+    public function getAwsVersion(): string
+    {
+        return $this->getConfig('BRASILAPI_BASE_URL') ?? 'https://brasilapi.com.br';
+    }
+
+    public function getAwsRegion(): string
+    {
+        return $this->getConfig('BRASILAPI_BASE_URL') ?? 'https://brasilapi.com.br';
+    }
+
     public function getJwtExpiry(): int
     {
         return (int)$this->getConfig('JWT_EXPIRY', 3600);

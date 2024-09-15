@@ -12,6 +12,20 @@ class CustomerEntity
     public string $state;
     public string $complement;
     public string $gender;
+    public $image_path;
+
+
+    public function getImagePath()
+    {
+        return $this->image_path;
+    }
+
+
+    public function setImagePath($image_path)
+    {
+        $this->image_path = $image_path;
+        return $this;
+    }
 
     public function getComplement(): string
     {

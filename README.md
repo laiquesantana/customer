@@ -222,6 +222,7 @@ curl -X POST http://localhost:8080/customer \
 "city": "Salvador",
 "state": "BA",
 "gender": "M"
+"image": (Upload File)
 }'
 ```
 ```bash

@@ -68,16 +68,57 @@
 		{
 			"name": "Create Customer",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNjM2MDU5OCwiZXhwIjoxNzI2MzY0MTk4LCJ1aWQiOjJ9.BwXYS3iFNFEisSpvX2R9Pkjq0Jsh4fnralaCcdCeV80",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [],
 				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/home/laique/Imagens/tes.png"
+						},
+						{
+							"key": "name",
+							"value": "John Doe",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "87305291587",
+							"type": "text"
+						},
+						{
+							"key": "cep",
+							"value": "40231230",
+							"type": "text"
+						},
+						{
+							"key": "number",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "gender",
+							"value": "M",
+							"type": "text"
+						},
+						{
+							"key": "complement",
+							"value": "asd",
+							"type": "text"
 						}
-					}
+					]
 				},
 				"url": {
 					"raw": "http://localhost:8080/customer",
@@ -132,7 +173,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Book Copy",
+			"name": "List book",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -142,7 +183,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNjM1NTcxNywiZXhwIjoxNzI2MzU5MzE3LCJ1aWQiOjJ9.9RooC6OFl3UPp4EjkVq8BtsYs5q0cx9-TvpNo8DYpI0",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNjM2MDU5OCwiZXhwIjoxNzI2MzY0MTk4LCJ1aWQiOjJ9.BwXYS3iFNFEisSpvX2R9Pkjq0Jsh4fnralaCcdCeV80",
 							"type": "string"
 						}
 					]

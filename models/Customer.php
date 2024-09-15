@@ -14,14 +14,15 @@ class Customer extends ActiveRecord
     {
         return [
             [['name', 'cpf', 'cep', 'number', 'gender'], 'required'],
-            ['cpf', 'match', 'pattern' => '/^\d{11}$/', 'message' => 'Invalid CPF format'], // Validação de formato
-            ['cpf', 'validateCpf'], // Validação personalizada de CPF brasileiro
-            ['cpf', 'unique', 'message' => 'This CPF has already been taken'], // Validação de unicidade
+            ['cpf', 'match', 'pattern' => '/^\d{11}$/', 'message' => 'Invalid CPF format'],
+            ['cpf', 'validateCpf'],
+            ['cpf', 'unique', 'message' => 'This CPF has already been taken'],
             ['cep', 'match', 'pattern' => '/^\d{8}$/', 'message' => 'Invalid CEP'],
             ['gender', 'in', 'range' => ['M', 'F'], 'message' => 'Invalid gender'],
             ['complement', 'string'],
             ['address', 'string'],
             ['city', 'string'],
+            [['image_path'], 'string'],
             ['state', 'string', 'max' => 2],
         ];
     }

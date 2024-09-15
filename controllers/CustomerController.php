@@ -6,11 +6,14 @@ use app\adapters\Http\ClientAdapter;
 use app\components\JwtAuth;
 use app\repositories\CepApiRepository;
 use app\repositories\CustomerRepository;
+use app\services\FileUploadService;
 use Yii;
 use yii\rest\Controller;
 use core\Modules\Customer\List\UseCase as ListUseCase;
 use core\Modules\Customer\Create\UseCase as CreateUseCase;
 use app\models\Customer;
+use yii\web\BadRequestHttpException;
+use yii\web\UploadedFile;
 
 class CustomerController extends Controller
 {
@@ -55,6 +58,17 @@ class CustomerController extends Controller
     public function actionCreate(): array
     {
         $data = Yii::$app->request->post();
+        $imageFile = UploadedFile::getInstanceByName('image');
+        if ($imageFile !== null) {
+            if (!in_array($imageFile->extension, ['jpg', 'png'])) {
+                throw new BadRequestHttpException('Invalid image format. Only JPG and PNG are accepted.');
+            }
+
+            if ($imageFile->size > 2 * 1024 * 1024) {
+                throw new BadRequestHttpException('File is too large. Maximum size is 2MB.');
+            }
+        }
+
         $model = new Customer();
         $model->setAttributes($data);
         if (!$model->validate()) {
@@ -66,13 +80,15 @@ class CustomerController extends Controller
         $customerGateway = new CustomerRepository();
         $httpClient = new ClientAdapter();
         $cepGateway = new CepApiRepository($httpClient);
+        $fileUploadService = new FileUploadService();
 
         $useCase = new CreateUseCase(
             $customerGateway,
-            $cepGateway
+            $cepGateway,
+            $fileUploadService
         );
 
-        $useCase->execute($data);
+        $useCase->execute($data,$imageFile);
 
         return $useCase->getResponse()->present();
     }
