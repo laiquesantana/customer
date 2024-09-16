@@ -60,8 +60,8 @@ docker-compose up -d
 
 #### 3.3 Execute as migrações para configurar o banco de dados:
 
-Verifique se dependencias estão instaladas corretamente(já é feito no build) entre dentro do container usando make bash
-e rode
+Verifique se dependencias estão instaladas corretamente(já é feito no build) entre dentro do container usando make bash e roda composer update
+ou rode diretamente o comando abaixo
 ```bash
 make update
 ```
